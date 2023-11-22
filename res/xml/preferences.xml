@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:robobunny="http://robobunny.com"
+    android:key="preference_screen" >
+
+    <PreferenceCategory
+        android:key="display_category"
+        android:title="Game" >
+        <ListPreference
+            android:defaultValue="2"
+            android:enabled="false"
+            android:entries="@array/playernames"
+            android:entryValues="@array/playervalues"
+            android:key="players"
+            android:summary="Set the number of players."
+            android:title="Player" >
+        </ListPreference>
+
+        <com.robobunny.SeekBarPreference
+            android:defaultValue="40"
+            android:key="cellSize"
+            android:max="80"
+            android:summary="Set size of cells."
+            android:title="Cell size"
+            robobunny:interval="4"
+            robobunny:min="20" />
+        <com.robobunny.SeekBarPreference
+            android:defaultValue="200"
+            android:key="tableSizeX"
+            android:max="400"
+            android:summary="Set width of the play table in percent."
+            android:title="Table width"
+            robobunny:interval="10"
+            robobunny:min="50"
+            robobunny:unitsRight="%" />
+        <com.robobunny.SeekBarPreference
+            android:defaultValue="200"
+            android:key="tableSizeY"
+            android:max="400"
+            android:summary="Set height of the play table in percent."
+            android:title="Table height"
+            robobunny:interval="10"
+            robobunny:min="50"
+            robobunny:unitsRight="%" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="display_category"
+        android:title="Display" >
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/colornames"
+            android:entryValues="@array/colorvalues"
+            android:key="colors"
+            android:summary="Set The color of backgroud."
+            android:title="Colors" >
+        </ListPreference>
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="showscore"
+            android:summary="Display Score."
+            android:title="Score" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="zoom"
+            android:summary="Enable zoom in and zoom out."
+            android:title="Enable zoom" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="display_category"
+        android:title="Network" >
+        <EditTextPreference
+            android:name="player"
+            android:defaultValue="Player"
+            android:key="player"
+            android:maxLength="10"
+            android:summary="Your nick name in player list."
+            android:title="Player name" />
+        <EditTextPreference
+            android:name="server"
+            android:defaultValue="www.landroo.dynu.com"
+            android:key="server"
+            android:summary="The address of the game server."
+            android:title="Game server" />
+
+        <ListPreference
+            android:defaultValue="5"
+            android:entries="@array/intervalnames"
+            android:entryValues="@array/intervalvalues"
+            android:key="interval"
+            android:summary="Time interval is secounds for checking players."
+            android:title="Polling interval" >
+        </ListPreference>
+    </PreferenceCategory>
+
+</PreferenceScreen>
